@@ -1,1 +1,1 @@
-var posts=["2023/01/19/2023-1-19-HelloWord/","2023/01/20/2023-1-20-MySQL for Windows安装/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["posts/44339.html","posts/37849.html"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
