@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>MySQL for Windows安装教程</title>
+      <link href="/2023/01/20/2023-1-20-MySQL%20for%20Windows%E5%AE%89%E8%A3%85/"/>
+      <url>/2023/01/20/2023-1-20-MySQL%20for%20Windows%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>MySQL是目前最为流行的开放源码的数据库，是完全网络化的跨平台的关系型数据库系统，它是由瑞典MySQLAB公司开发，目前属于<a href="https://so.csdn.net/so/search?q=Oracle&spm=1001.2101.3001.7020">Oracle</a>公司。任何人都能从Internet下载MySQL软件，而无需支付任费用，并且“开放源码”意味着任何人都可以使用和修改该软件。</p></blockquote><h2 id="安装器安装"><a href="#安装器安装" class="headerlink" title="安装器安装"></a>安装器安装</h2><p>下载地址：<a href="https://dev.mysql.com/downloads/installer/">https://dev.mysql.com/downloads/installer/</a></p><p>mysql官网上提供了两种安装方式，第一种是在线版联网安装，第二种是本地安装。二者的区别是前者是联网安装，当安装时必须能访问互联网，后者是离线安装使用的，一般建议下载离线安装使用的版本。<br></p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116231250997.png" alt="image-20230116231250997"></p><p>以上两种安装方法均为图形界面向导方式安装，优点是可以比较清晰地看到整个mysql安装过程，并且可以选择性的安装所需的功能。缺点是安装过程中会出现一些环境依赖问题，导致安装失败。<br></p><h2 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a>压缩包安装</h2><p>下载地址：<a href="https://dev.mysql.com/downloads/mysql/5.5.html#downloads">https://dev.mysql.com/downloads/mysql/5.5.html#downloads</a></p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116231615539.png" alt="image-20230116231615539"></p><p>解压出下载好的文件（自行决定存放位置，后续不可删除）</p><p>打开电脑环境变量，在系统变量里找到<code>Path</code>编辑，然后添加MySQL文件夹内的bin文件目录到<code>Path</code>如图：</p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116232618773.png" alt="image-20230116232618773"></p><p>环境变量配置完成后，打开文件夹，创建一个新的文件名后缀为<code>.ini</code>的<code>my.ini</code>的空白文件</p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116232633675.png" alt="image-20230116232633675"></p><p>编辑创建好的<code>my.ini</code>文件用于初始化MySQL数据库</p><blockquote><p>路径必须为“’\”的形式。</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port = 3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir = D:\\mysql\\mysql-8.0.31-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir = D:\\mysql\\mysql-8.0.31-winx64\\data</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections=20</span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine=INNODB</span><br><span class="line"># 创建模式</span><br><span class="line">sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</span><br></pre></td></tr></table></figure><p>填写好内容后按<code>Windows + R</code>输入cmd打开Windows命令行窗口，输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize</span><br></pre></td></tr></table></figure><p>进行初始化，执行完成后会发现文件夹下多出一个名为<code>data</code>的文件夹。</p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116232717520.png" alt="image-20230116232717520"></p><p>在data文件夹内会有一个后缀名为.err的文件，里面存放的是初始化登录MySQL的密码；</p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116232703211.png" alt="image-20230116232703211"></p><p>打开.err文件找到如图所示的root用户名和root密码：<br><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/image-20230116232813658.png" alt="image-20230116232813658"><br></p><blockquote><p>如果<strong>先前</strong>在电脑中装过mysql，请在cmd命令窗口输入<code>sc delete mysql</code> 删除之前的mysql服务。<strong>第一次安装请忽略</strong> </p></blockquote><p>打开cmd窗口输入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqld --install</span><br><span class="line">##开启mysql服务</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure><p>使用刚才获取到的密码登录</p><p><img src="https://cdn.yzmzx.ac.cn/https://raw.githubusercontent.com/YzMzxl/Typora-img/master/img/20201124185101784.png#pic_center" alt="在这里插入图片描述"></p><p>登录成功后修改root账户密码：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &#x27;root&#x27;@&#x27;localhost&#x27; identified with mysql_native_password by &#x27; **这里填写新密码** &#x27;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开源项目食用指南 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello Word</title>
       <link href="/2023/01/19/2023-1-19-HelloWord/"/>
       <url>/2023/01/19/2023-1-19-HelloWord/</url>
