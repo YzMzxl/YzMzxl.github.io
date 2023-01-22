@@ -6,7 +6,7 @@
   <link href="https://blog.yzmzx.ac.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.yzmzx.ac.cn/"/>
-  <updated>2023-01-22T02:33:17.531Z</updated>
+  <updated>2023-01-22T09:44:00.563Z</updated>
   <id>https://blog.yzmzx.ac.cn/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://blog.yzmzx.ac.cn/posts/39978.html"/>
     <id>https://blog.yzmzx.ac.cn/posts/39978.html</id>
     <published>2023-01-22T02:30:28.083Z</published>
-    <updated>2023-01-22T02:33:17.531Z</updated>
+    <updated>2023-01-22T09:44:00.563Z</updated>
     
     <content type="html"><![CDATA[<h2 id="0，项目地址"><a href="#0，项目地址" class="headerlink" title="0，项目地址"></a>0，项目地址</h2><hr><h2 id="Real-ESRGAN"><a href="#Real-ESRGAN" class="headerlink" title="Real-ESRGAN"></a><a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a></h2><h2 id="1，项目介绍"><a href="#1，项目介绍" class="headerlink" title="1，项目介绍"></a>1，项目介绍</h2><hr><p>Real-ESRGAN 是腾讯 ARC 实验室发表超分辨率算法，目标是开发出实用的图像/视频修复算法。ESRGAN 的基础上使用纯合成的数据来进行训练，以使其能被应用于实际的图片修复的场景。</p><h2 id="2，食用方法"><a href="#2，食用方法" class="headerlink" title="2，食用方法"></a>2，食用方法</h2><hr><p>1，下载<strong>支持 Intel/AMD/Nvidia 显卡</strong>的项目文件： <a href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-windows.zip">Windows 版</a> / <a href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip">Linux 版</a> / <a href="https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-macos.zip">macOS 版</a>。<br>2，你可以通过下面这个命令来运行（Windows 版本的例子，更多信息请查看对应版本的 README.md）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./realesrgan-ncnn-vulkan.exe -i 输入图像.jpg -o 输出图像.png -n 模型名字</span><br></pre></td></tr></table></figure><p>此项目提供了 5 种可用模型：</p><blockquote><ol><li> realesrgan-x4plus（默认）</li><li> reaesrnet-x4plus</li><li> realesrgan-x4plus-anime（针对动漫插画图像优化，有更小的体积）</li><li> realesr-animevideov3 (针对动漫视频)</li></ol></blockquote><p>你可以通过<code>-n</code>参数来使用其他模型，例如<code>./realesrgan-ncnn-vulkan.exe -i 二次元图片.jpg -o 二刺螈图片.png -n realesrgan-x4plus-anime</code></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;0，项目地址&quot;&gt;&lt;a href=&quot;#0，项目地址&quot; class=&quot;headerlink&quot; title=&quot;0，项目地址&quot;&gt;&lt;/a&gt;0，项目地址&lt;/h2&gt;&lt;hr&gt;
-&lt;h2 id=&quot;Real-ESRGAN&quot;&gt;&lt;a href=&quot;#Real-ESRGAN&quot; class=&quot;h</summary>
-      
+    <summary type="html">Real-ESRGAN 旨在开发通用图像恢复的实用算法。以修复模糊图片&amp;视频。</summary>
     
     
     
@@ -75,7 +71,7 @@
     <link href="https://blog.yzmzx.ac.cn/posts/44339.html"/>
     <id>https://blog.yzmzx.ac.cn/posts/44339.html</id>
     <published>2023-01-19T05:07:56.802Z</published>
-    <updated>2023-01-22T02:32:13.833Z</updated>
+    <updated>2023-01-22T09:47:04.044Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h2>]]></content>
     
