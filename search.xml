@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Windows </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
@@ -64,6 +64,12 @@
       
         <content type="html"><![CDATA[<h2 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h2>]]></content>
       
+      
+      <categories>
+          
+          <category> 其他 </category>
+          
+      </categories>
       
       
     </entry>

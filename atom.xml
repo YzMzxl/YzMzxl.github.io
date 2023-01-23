@@ -60,9 +60,9 @@
     <category term="开源项目食用指南" scheme="https://blog.yzmzx.ac.cn/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E9%A3%9F%E7%94%A8%E6%8C%87%E5%8D%97/"/>
     
     
-    <category term="Windows" scheme="https://blog.yzmzx.ac.cn/tags/Windows/"/>
-    
     <category term="MySQL" scheme="https://blog.yzmzx.ac.cn/tags/MySQL/"/>
+    
+    <category term="Windows" scheme="https://blog.yzmzx.ac.cn/tags/Windows/"/>
     
   </entry>
   
@@ -71,7 +71,7 @@
     <link href="https://blog.yzmzx.ac.cn/posts/44339.html"/>
     <id>https://blog.yzmzx.ac.cn/posts/44339.html</id>
     <published>2023-01-19T05:07:56.802Z</published>
-    <updated>2023-01-22T09:47:04.044Z</updated>
+    <updated>2023-01-23T08:26:07.962Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Hello-Word"><a href="#Hello-Word" class="headerlink" title="Hello Word"></a>Hello Word</h2>]]></content>
     
@@ -82,6 +82,8 @@
       
     
     
+    
+    <category term="其他" scheme="https://blog.yzmzx.ac.cn/categories/%E5%85%B6%E4%BB%96/"/>
     
     
   </entry>
