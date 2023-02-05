@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>隐藏Root常见问题&amp;解决办法 | YzMzxl's Blog</title><meta name="author" content="YzMzxl"><meta name="copyright" content="YzMzxl"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="momo 相关 Pc 可以ctrl+f快速搜索自己需要的条目   Q : 可执行程序 su　找到 magiskA : 使用shamiko模块，在面具排除列表勾选该应用所有进程并重启 momo 即可。 Q : 仍然出现找到 magiskA : 检查是否装了全局模块如字体，驱动等 Q : 找到 zygiskA : 使用shamiko v0.6（126）模块即可，如果仍然出现关掉所有的 lsposed">
+<meta property="og:type" content="article">
+<meta property="og:title" content="隐藏Root常见问题&amp;解决办法">
+<meta property="og:url" content="https://blog.hutaowife.com/posts/63160.html">
+<meta property="og:site_name" content="YzMzxl&#39;s Blog">
+<meta property="og:description" content="momo 相关 Pc 可以ctrl+f快速搜索自己需要的条目   Q : 可执行程序 su　找到 magiskA : 使用shamiko模块，在面具排除列表勾选该应用所有进程并重启 momo 即可。 Q : 仍然出现找到 magiskA : 检查是否装了全局模块如字体，驱动等 Q : 找到 zygiskA : 使用shamiko v0.6（126）模块即可，如果仍然出现关掉所有的 lsposed">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp">
+<meta property="article:published_time" content="2023-02-05T05:38:35.619Z">
+<meta property="article:modified_time" content="2023-02-05T05:45:31.420Z">
+<meta property="article:author" content="YzMzxl">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Root">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp"><link rel="shortcut icon" href="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/logo.png"><link rel="canonical" href="https://blog.hutaowife.com/posts/63160.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '隐藏Root常见问题&解决办法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-05 13:45:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="YzMzxl's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/logo.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="YzMzxl's Blog"><span class="site-name">YzMzxl's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fas fa-rss"></i><span> RSS</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">隐藏Root常见问题&amp;解决办法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-02-05T05:38:35.619Z" title="发表于 2023-02-05 13:38:35">2023-02-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-05T05:45:31.420Z" title="更新于 2023-02-05 13:45:31">2023-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Android%E7%8E%A9%E6%9C%BA%E8%AE%B0%E5%BD%95/">Android玩机记录</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">782</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="隐藏Root常见问题&amp;解决办法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="momo-相关"><a href="#momo-相关" class="headerlink" title="momo 相关"></a>momo 相关</h1><blockquote>
+<p>Pc 可以<code>ctrl+f</code>快速搜索自己需要的条目</p>
+</blockquote>
+<hr>
+<p>Q : 可执行程序 <code>su</code><br>　找到 magisk<br>A : 使用<a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed.github.io/releases">shamiko</a>模块，在面具排除列表勾选该应用所有进程并重启 momo 即可。</p>
+<p>Q : 仍然出现找到 magisk<br>A : 检查是否装了全局模块如字体，驱动等</p>
+<p>Q : 找到 zygisk<br>A : 使用<a target="_blank" rel="noopener" href="https://github.com/LSPosed/LSPosed.github.io/releases/download/shamiko-126/Shamiko-v0.6-126-release.zip">shamiko v0.6（126）</a>模块即可，如果仍然出现关掉所有的 lsposed 模块，再次打开 momo 检查，如果没有<code>找到zygisk</code>就一个个打开排除。</p>
+<blockquote>
+<p>不能在 lsposed 作用域勾选 momo，否则会出现<code>到xposed框架</code>&amp;<code>发现代码注入</code>。</p>
+</blockquote>
+<p>Q : 包管理服务异常<br>A : 关闭核心破解的<code>禁用软件包管理器签名验证</code></p>
+<p>Q : 数据未加密，挂载参数被修改<br>A : 系统为 data 默认未加密的官改包，官方都是强制启用加密功能，更换 rom 或者加密，一般不会出现。</p>
+<p>Q : 设备正在运行非原厂系统<br>A : 删除<code>system/addon.d</code>这个文件夹</p>
+<p>Q : 分区挂载异常<br>A : 不用管 /doge</p>
+<p>Q : bootload 未锁定<br>A : 先备份 persist 分区<code>/dev/block/by-name/persist</code>，然后删除<code>/mnt/vendor/persist/data</code>文件夹就无法检测 bl 锁真实状态了，同时会出现<code>TEE损坏</code>。</p>
+<p>Q : TEE 损坏<br>A : 使用了伪装上锁模块，大部分厂家（小米不会）解锁那一刻就会出现这个，如果想修复只能用原机的 dev/block/by-name/persist 的备份刷入<br><br>ps：或许可以</p>
+<p>Q : 已开启调试模式<br>A : 开发者选项里关闭<code>USB调试</code><br><br>ps：一般没软件会查这个目前我知道的就某不知名 fps 游戏未来之役</p>
+<p>Q : 存在 Magisk 或 TWRP 等可疑文件<br>A : 因为你刷了第三方 recovery,TWRP，TWRP 会在你手机的内部存储生成了一个名叫<code>TWRP</code>的文件夹。解决方法：把手机内部存储存在的 TWRP 文件夹重命名，比如重命名为 TWRP1 就好了。</p>
+<p>Q : 非 SDK 接口的限制失效<br>A : 开发者选项里打开<code>USB调试</code>、<code>USB调试（安全设置）</code>，adb 运行以下命令来重置系统`非 SDK 接口限制</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Android 10（API 级别 29）或更高版本：</span><br><span class="line">adb shell settings delete global hidden_api_policy</span><br><span class="line"></span><br><span class="line">Android 9（API 级别 28）：</span><br><span class="line">adb shell settings delete global hidden_api_policy_pre_p_apps</span><br><span class="line">adb shell settings delete global hidden_api_policy_p_apps</span><br></pre></td></tr></table></figure>
+
+<p>无需 root 权限运行，运行完不用重启立即生效</p>
+<h1 id="应用相关"><a href="#应用相关" class="headerlink" title="应用相关"></a>应用相关</h1><hr>
+<blockquote>
+<p>一般来说，如果你按照<code>momo相关</code>教程走完后 momo 只检测到<code>bootload未锁定</code>基本上绝大部分软件都不会有问题了，下文主要讲解一些特定应用的疑难杂症。</p>
+</blockquote>
+<p>Q : 中国电信 v10.0.1 更新后卡第一屏<br>A : 设置 magisk 更新通道为<code>Canary</code>并更新至最新版，在设置选择隐藏即可。</p>
+<p>Q : 未来之役打开就跳转浏览器无法使用<br>A : 在 momo 只检测到<code>bootload未锁定</code>情况下安装 magiskv25.2 并随机包名安装即可</p>
+<blockquote>
+<p>想玩就得用旧版中国电信，鱼与熊掌不可兼得</p>
+</blockquote>
+<h2 id="暂时就这些，后续继续在此文章更新。"><a href="#暂时就这些，后续继续在此文章更新。" class="headerlink" title="暂时就这些，后续继续在此文章更新。"></a>暂时就这些，后续继续在此文章更新。</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.hutaowife.com">YzMzxl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.hutaowife.com/posts/63160.html">https://blog.hutaowife.com/posts/63160.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.hutaowife.com" target="_blank">YzMzxl's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Android/">Android</a><a class="post-meta__tags" href="/tags/Root/">Root</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://lib.baomitu.com/social-share.js/1.0.16/css/share.min.css" media="print" onload="this.media='all'"><script src="https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/logo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YzMzxl</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/YzMzxl"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/YzMzxl" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:yzmzxa@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://qm.qq.com/cgi-bin/qm/qr?k=MgWAYS6Q3A8pYQaY2mFH5_p_fAWLtwYm&amp;noverify=0&amp;personal_qrcode_source=3" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><center><b>--- 主域名 ---<br><a href="https://blog.hutaowife.com/" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">blog.hutaowife.com</font></a><br><b>--- 导航站 ---<br><a target="_blank" rel="noopener" href="https://nav.hutaowife.com/" title="此线路部署于Vercel" class="anno_content"><font color="#5ea6e5">nav.hutaowife.com</font></a></div></div><div class="card-widget" id="newYear"><div class="item-headline"><i></i><span></span></div><div class="item-content"><div id="newYear-main"><div class="mask"></div> <p class="title"></p> <div class="newYear-time"></div> <p class="today" style="text-align: right;"></p> </div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#momo-%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">momo 相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">应用相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9A%82%E6%97%B6%E5%B0%B1%E8%BF%99%E4%BA%9B%EF%BC%8C%E5%90%8E%E7%BB%AD%E7%BB%A7%E7%BB%AD%E5%9C%A8%E6%AD%A4%E6%96%87%E7%AB%A0%E6%9B%B4%E6%96%B0%E3%80%82"><span class="toc-number">2.1.</span> <span class="toc-text">暂时就这些，后续继续在此文章更新。</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/63160.html" title="隐藏Root常见问题&amp;解决办法"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="隐藏Root常见问题&amp;解决办法"/></a><div class="content"><a class="title" href="/posts/63160.html" title="隐藏Root常见问题&amp;解决办法">隐藏Root常见问题&amp;解决办法</a><time datetime="2023-02-05T05:38:35.619Z" title="发表于 2023-02-05 13:38:35">2023-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/39978.html" title="Real-ESRGAN-图像超分"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200110624.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Real-ESRGAN-图像超分"/></a><div class="content"><a class="title" href="/posts/39978.html" title="Real-ESRGAN-图像超分">Real-ESRGAN-图像超分</a><time datetime="2023-01-22T02:30:28.083Z" title="发表于 2023-01-22 10:30:28">2023-01-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/37849.html" title="MySQL for Windows安装教程"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200044697.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL for Windows安装教程"/></a><div class="content"><a class="title" href="/posts/37849.html" title="MySQL for Windows安装教程">MySQL for Windows安装教程</a><time datetime="2023-01-20T03:44:02.369Z" title="发表于 2023-01-20 11:44:02">2023-01-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44339.html" title="Hello Word"><img src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200044615.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello Word"/></a><div class="content"><a class="title" href="/posts/44339.html" title="Hello Word">Hello Word</a><time datetime="2023-01-19T05:07:56.802Z" title="发表于 2023-01-19 13:07:56">2023-01-19</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By YzMzxl</div><div class="footer_custom_text">I wish you to become your own sun, no need to rely on who's light.<p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.hutaowife.com/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.hutaowife.com/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/fangdou.js"></script><script src="/js/custom.js"></script><script defer src="/js/cursor.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><script async data-pjax src="/js/newYear.js"></script><script src="/js/title.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/39978.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200110624.webp" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-01-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/39978.html&quot;);" href="javascript:void(0);" alt="">Real-ESRGAN-图像超分</a><div class="blog-slider__text">Real-ESRGAN 旨在开发通用图像恢复的实用算法。以修复模糊图片&amp;视频。</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/39978.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/37849.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200044697.webp" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-01-20</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/37849.html&quot;);" href="javascript:void(0);" alt="">MySQL for Windows安装教程</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/37849.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/63160.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://cdn.hutaowife.com/https://raw.githubusercontent.com/YzMzxl/Hexo-images/main/img/202301200111033.webp" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-02-05</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/63160.html&quot;);" href="javascript:void(0);" alt="">隐藏Root常见问题&amp;解决办法</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/63160.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
